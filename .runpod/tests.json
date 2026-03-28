@@ -39,10 +39,10 @@
     "gpuCount": 1,
     "env": [
       { "key": "ENABLE_DUMMY", "value": "true" },
-      { "key": "WEIGHT_PATH_4B", "value": "/runpod-volume/OmniSVG1.1_4B" },
-      { "key": "WEIGHT_PATH_8B", "value": "/runpod-volume/OmniSVG1.1_8B" },
-      { "key": "QWEN_MODEL_4B", "value": "/runpod-volume/Qwen2.5-VL-3B-Instruct" },
-      { "key": "QWEN_MODEL_8B", "value": "/runpod-volume/Qwen2.5-VL-7B-Instruct" }
+      { "key": "WEIGHT_PATH_4B", "value": "OmniSVG/OmniSVG1.1_4B" },
+      { "key": "WEIGHT_PATH_8B", "value": "OmniSVG/OmniSVG1.1_8B" },
+      { "key": "QWEN_MODEL_4B", "value": "Qwen/Qwen2.5-VL-3B-Instruct" },
+      { "key": "QWEN_MODEL_8B", "value": "Qwen/Qwen2.5-VL-7B-Instruct" }
     ],
     "allowedCudaVersions": [
       "12.1",

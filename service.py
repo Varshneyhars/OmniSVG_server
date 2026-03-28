@@ -194,8 +194,10 @@ def load_models(model_size: str) -> None:
     print(f"Qwen model: {model_path}")
     print(f"OmniSVG weights: {weight_path}")
 
-    tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side="left", trust_remote_code=True)
-    processor = AutoProcessor.from_pretrained(model_path, padding_side="left", trust_remote_code=True)
+    pretrained_kwargs: Dict[str, Any] = {"padding_side": "left", "trust_remote_code": True}
+
+    tokenizer = AutoTokenizer.from_pretrained(model_path, **pretrained_kwargs)
+    processor = AutoProcessor.from_pretrained(model_path, **pretrained_kwargs)
     processor.tokenizer.padding_side = "left"
 
     sketch_decoder = SketchDecoder(

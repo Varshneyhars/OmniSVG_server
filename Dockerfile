@@ -35,13 +35,13 @@ RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Default ENV (can be overridden by Runpod env settings)
-ENV WEIGHT_PATH=/runpod-volume/OmniSVG \
-    WEIGHT_PATH_4B=/runpod-volume/OmniSVG1.1_4B \
-    WEIGHT_PATH_8B=/runpod-volume/OmniSVG1.1_8B \
+ENV WEIGHT_PATH=OmniSVG/OmniSVG \
+    WEIGHT_PATH_4B=OmniSVG/OmniSVG1.1_4B \
+    WEIGHT_PATH_8B=OmniSVG/OmniSVG1.1_8B \
     CONFIG_PATH=/workspace/config.yaml \
-    QWEN_LOCAL_DIR=/runpod-volume/Qwen2.5-VL-3B-Instruct \
-    QWEN_MODEL_4B=/runpod-volume/Qwen2.5-VL-3B-Instruct \
-    QWEN_MODEL_8B=/runpod-volume/Qwen2.5-VL-7B-Instruct \
+    QWEN_LOCAL_DIR=Qwen/Qwen2.5-VL-3B-Instruct \
+    QWEN_MODEL_4B=Qwen/Qwen2.5-VL-3B-Instruct \
+    QWEN_MODEL_8B=Qwen/Qwen2.5-VL-7B-Instruct \
     SVG_TOKENIZER_CONFIG=/workspace/config.yaml \
     ENABLE_DUMMY=true
 

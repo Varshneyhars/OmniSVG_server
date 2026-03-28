@@ -49,11 +49,10 @@ class SketchDecoder(nn.Module):
         
         if model_path is None:
             model_path = huggingface_config['qwen_model']
-        
-        # 方案1：先用原始配置加载模型，然后再调整词表大小
+
         self.transformer = Qwen2_5_VLForConditionalGeneration.from_pretrained(
             model_path,
-            torch_dtype=torch.bfloat16, 
+            torch_dtype=torch.bfloat16,
             attn_implementation="sdpa",
             device_map="auto",
         )
