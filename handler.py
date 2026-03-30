@@ -92,4 +92,11 @@ def handler(event: Dict[str, Any]) -> Dict[str, Any]:
         return {"error": str(e)}
 
 
+# Preload model at startup (not inside a request) so the first request doesn't timeout.
+if os.environ.get("ENABLE_DUMMY", "true").lower() != "true":
+    print("[handler] ENABLE_DUMMY is off — preloading model at startup...")
+    import service  # type: ignore
+    service.ensure_model_loaded()
+    print("[handler] Model preloaded, ready to serve requests.")
+
 runpod.serverless.start({"handler": handler})

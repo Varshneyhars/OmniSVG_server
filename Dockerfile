@@ -54,7 +54,7 @@ ENV WEIGHT_PATH=OmniSVG/OmniSVG1.1_4B \
     QWEN_LOCAL_DIR=Qwen/Qwen2.5-VL-3B-Instruct \
     QWEN_MODEL_4B=Qwen/Qwen2.5-VL-3B-Instruct \
     SVG_TOKENIZER_CONFIG=/workspace/config.yaml \
-    ENABLE_DUMMY=true
+    ENABLE_DUMMY=false
 
 # Serverless entrypoint
 CMD ["python", "-u", "handler.py"]
