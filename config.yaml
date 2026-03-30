@@ -1,5 +1,5 @@
 # Default model size (can be overridden at runtime)
-default_model_size: "8B"
+default_model_size: "4B"
 
 # ==============================================================================
 # Model-specific configurations

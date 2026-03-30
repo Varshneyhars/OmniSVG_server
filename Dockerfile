@@ -44,6 +44,10 @@ RUN python -c "\
 from huggingface_hub import hf_hub_download; \
 hf_hub_download(repo_id='OmniSVG/OmniSVG1.1_4B', filename='pytorch_model.bin')"
 
+# Block all runtime downloads — if a model is missing from cache, fail fast
+# instead of silently downloading for 10 minutes and timing out
+ENV HF_HUB_OFFLINE=1
+
 # Now copy source code — changes here won't re-trigger model downloads above
 COPY . /workspace
 
